@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>ZyrusKGT - About Me</title>
+
+<link href="./main.3da94fde.css" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #69737AF2;
+    color: #ffffff;
+  }
+
+  /* Navigation */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #69737AF2;
+    border-bottom: 1px solid rgba(223, 214, 214, 0.1);
+    padding: 1.5rem 3rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #b0b0b0;
+    transition: color 0.3s ease;
+    position: relative;
+    outline: none;
+    user-select: none;
+  }
+
+  .logo:hover {
+    color: #812c12;
+  }
+
+  .logo::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #812c12;
+    transition: width 0.3s ease;
+  }
+
+  .logo:hover::after {
+    width: 100%;
+  }
+
+    .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+    outline: none;
+    user-select: none;
+  }
+
+  .nav-links a:hover {
+    color: #812c12;
+  }
+
+  .nav-links a.active {
+    color: #812c12;
+  }
+
+  .nav-links a.active::after {
+    width: 100%;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #812c12;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .search-icon {
+    font-size: 1.2rem;
+    color: #812c12;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .search-icon:hover {
+    color: #b0b0b0;
+  }
+
+  /* More About Me Section */
+  .more-about-section {
+    background: #1e2124f2;
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  .more-about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #812c12;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    row-gap: 3rem;
+    align-items: start;
+  }
+
+  .about-info {
+    color: #b0b0b0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+  }
+
+  .about-info h3 {
+    color: #812c12;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .about-info h3:first-child {
+    margin-top: 0;
+  }
+
+  .about-info p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .about-info ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .about-info ul li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .about-info ul li::before {
+    content: "• ";
+    color: #812c12;
+    margin-right: 0.5rem;
+  }
+
+  /* Table Styles */
+  .table-container {
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .table-title {
+    color: #812c12;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+
+  .education-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .education-table th,
+  .education-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #b0b0b0;
+  }
+
+  .education-table th {
+    background: rgba(129, 44, 18, 0.1);
+    color: #812c12;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .education-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .education-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+      gap: 1.5rem;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .education-table th,
+    .education-table td {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .table-title {
+      font-size: 1.5rem;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Header -->
+<header>
+  <nav>
+    <div class="logo">ZKGT</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Hello!</a></li>
+      <li><a href="about.html" class="active">More About Me</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Socials</a></li>
+      <li><i class="fas fa-search search-icon"></i></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- More About Me Section -->
+<section class="more-about-section" id="more-about-me">
+  <div class="more-about-container">
+    <h2 class="section-title">More About Me</h2>
+    <div class="about-content">
+      <div class="about-info">
+        <h3>Hobbies and Likes</h3>
+        <ul>
+          <li>Animals</li>
+          <li>Singing</li>
+          <li>Anime</li>
+          <li>Reading Manga</li>
+          <li>Traveling</li>
+          <li>Movies and Series</li>
+          <li>Playing Games</li>
+        </ul>
+      </div>
+      <div class="about-info">
+        <h3>Other Info</h3>
+        <p>Hello I am Zyrus Katriel, I am from the Philippines, and I don't know how to tell you about myself. All I can say is I am an introvert. I like to discover things that are new to me, and I often find myself—especially when I'm driving—wanting to know where a new road will take me. That leads me to impulsively go to it even though I don't know whether it will be dangerous or not.</p>
+        <p>I also am a part timer and I work at McDonald's. I've worked there for a year, and in that time I have experienced many fun and not-fun things outside of my comfort zone. My comfort zone is basically just me laying flat in my bed, watching anime, reading manga, and watching movies and series, especially thriller, comedy and action genres. I also love seeing people's reactions, especially to things I already know. For example, after I watched Avengers: Endgame, I immediately wanted to watch people's reactions on YouTube and know what they think about it. It makes me happy that what I like makes others happy too.</p>
+        <p>My dream is to travel across the world. I want to see the world and experience different cultures. I want to see the beauty of the world and meet new people. I want to experience new things and learn new things, and I want to be able to say that I have lived a full life and not just a boring one.</p>
+      </div>
+
+      <div class="about-info">
+        <h3>About Me</h3>
+        <p><strong>Birthdate:</strong> March 12, 2005</p>
+        <p><strong>Relationship:</strong> In a Relationship</p>
+        <p><strong>Location:</strong> Malagonlong, Lipa City, Batangas</p>
+        <p><strong>Highschool:</strong> The Mabini Academy</p>
+        <p><strong>College:</strong> University of Batangas, Lipa City</p>
+      </div>
+    </div>
+
+    <!-- Education Timeline Table -->
+    <div class="table-container">
+      <h3 class="table-title">Education Timeline</h3>
+      <table class="education-table">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>Institution</th>
+            <th>Year</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elementary</td>
+            <td>Local Elementary School</td>
+            <td>2011-2017</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>High School</td>
+            <td>The Mabini Academy</td>
+            <td>2017-2021</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>College</td>
+            <td>University of Batangas</td>
+            <td>2021-Present</td>
+            <td>Ongoing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    // Search functionality
+    document.querySelector('.search-icon').addEventListener('click', function() {
+      alert('Search functionality coming soon!');
+    });
+  });
+</script>
+ <script type="text/javascript" src="./main.4c6e144e.js"></script></body>
+
+</html>

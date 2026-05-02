@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>ZyrusKGT - Contact</title>
+
+<link href="./main.3da94fde.css" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #69737AF2;
+    color: #ffffff;
+  }
+
+  /* Navigation */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #69737AF2;
+    border-bottom: 1px solid rgba(223, 214, 214, 0.1);
+    padding: 1.5rem 3rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #b0b0b0;
+    transition: color 0.3s ease;
+    position: relative;
+    outline: none;
+    user-select: none;
+  }
+
+  .logo:hover {
+    color: #812c12;
+  }
+
+  .logo::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #812c12;
+    transition: width 0.3s ease;
+  }
+
+  .logo:hover::after {
+    width: 100%;
+  }
+
+    .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+    outline: none;
+    user-select: none;
+  }
+
+  .nav-links a:hover {
+    color: #812c12;
+  }
+
+  .nav-links a.active {
+    color: #812c12;
+  }
+
+  .nav-links a.active::after {
+    width: 100%;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #812c12;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .search-icon {
+    font-size: 1.2rem;
+    color: #812c12;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .search-icon:hover {
+    color: #b0b0b0;
+  }
+
+  .socials-section {
+    background: #1e2124f2;
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    margin-top: 80px;
+  }
+
+  .socials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .socials-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #812c12;
+    margin-bottom: 3rem;
+  }
+
+  .socials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .social-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(129, 44, 18, 0.2);
+  }
+
+  .social-icon {
+    font-size: 3rem;
+    color: #812c12;
+    margin-bottom: 1rem;
+  }
+
+  .social-link {
+    text-decoration: none;
+    color: #e5e5e5;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    outline: none;
+    background: none;
+  }
+
+  .social-link:hover,
+  .social-link:focus,
+  .social-link:active {
+    color: #812c12;
+    outline: none;
+    box-shadow: none;
+    background: none;
+    text-decoration: none;
+  }
+
+  .social-link:visited {
+    color: #d0d0d0;
+  }
+
+  /* Contact Form Styles */
+  .contact-form-container {
+    margin-top: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-title {
+    color: #812c12;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .contact-form {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    color: #b0b0b0;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: #812c12;
+    box-shadow: 0 0 0 2px rgba(129, 44, 18, 0.2);
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: #888;
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #812c12;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .form-submit:hover {
+    background: #a0351a;
+    transform: translateY(-2px);
+  }
+
+  .form-submit:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+      gap: 1.5rem;
+    }
+
+    .socials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .socials-title {
+      font-size: 2rem;
+    }
+
+    .contact-form {
+      padding: 1.5rem;
+    }
+
+    .contact-title {
+      font-size: 1.5rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      padding: 0.7rem 0.8rem;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Header -->
+<header>
+  <nav>
+    <div class="logo">ZKGT</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Hello!</a></li>
+      <li><a href="about.html">More About Me</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Socials</a></li>
+      <li><i class="fas fa-search search-icon"></i></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="socials-section" id="socials">
+  <div class="socials-container">
+    <h2 class="socials-title">Connect With Me</h2>
+    <div class="socials-grid">
+      <div class="social-item">
+        <i class="fab fa-facebook-f social-icon"></i>
+        <a href="https://www.facebook.com/ZKGT12" class="social-link" target="_blank">Facebook</a>
+      </div>
+      <div class="social-item">
+        <i class="fab fa-instagram social-icon"></i>
+        <a href="https://www.instagram.com/z_k.g.t/" class="social-link" target="_blank">Instagram</a>
+      </div>
+      <div class="social-item">
+        <i class="fab fa-x social-icon"></i>
+        <a href="https://x.com/ZyrusKGT" class="social-link" target="_blank">X</a>
+      </div>
+      <div class="social-item">
+        <i class="fas fa-envelope social-icon"></i>
+        <a href="mailto:your.email@gmail.com" class="social-link">zyruskatriel12@gmail.com</a>
+      </div>
+      <div class="social-item">
+        <i class="fas fa-phone social-icon"></i>
+        <a href="tel:+1234567890" class="social-link">09369619760</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-container">
+      <h3 class="contact-title">Send Me a Message</h3>
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" id="subject" name="subject" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    // Search functionality
+    document.querySelector('.search-icon').addEventListener('click', function() {
+      alert('Search functionality coming soon!');
+    });
+
+    // Contact form functionality
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      // Simple form validation and feedback
+      if (data.name && data.email && data.subject && data.message) {
+        alert('Thank you for your message, ' + data.name + '! I\'ll get back to you soon.');
+        this.reset();
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+  });
+</script>
+ <script type="text/javascript" src="./main.4c6e144e.js"></script></body>
+
+</html>

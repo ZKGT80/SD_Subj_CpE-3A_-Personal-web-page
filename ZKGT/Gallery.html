@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>ZyrusKGT - Gallery</title>
+
+<link href="./main.3da94fde.css" rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #69737AF2;
+    color: #ffffff;
+  }
+
+  /* Navigation */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #69737AF2;
+    border-bottom: 1px solid rgba(223, 214, 214, 0.1);
+    padding: 1.5rem 3rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #b0b0b0;
+    transition: color 0.3s ease;
+    position: relative;
+    outline: none;
+    user-select: none;
+  }
+
+  .logo:hover {
+    color: #812c12;
+  }
+
+  .logo::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #812c12;
+    transition: width 0.3s ease;
+  }
+
+  .logo:hover::after {
+    width: 100%;
+  }
+
+    .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+    outline: none;
+    user-select: none;
+  }
+
+  .nav-links a:hover {
+    color: #812c12;
+  }
+
+  .nav-links a.active {
+    color: #812c12;
+  }
+
+  .nav-links a.active::after {
+    width: 100%;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #812c12;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .search-icon {
+    font-size: 1.2rem;
+    color: #812c12;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .search-icon:hover {
+    color: #b0b0b0;
+  }
+
+  .gallery-section {
+    background: #1e2124f2;
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    margin-top: 80px;
+  }
+
+  .gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .gallery-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #812c12;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .gallery-frame {
+    min-height: 240px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  .gallery-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+  }
+
+  .gallery-frame::before {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    border: 2px dashed rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    pointer-events: none;
+  }
+
+  .gallery-caption {
+    padding: 1rem 1.2rem 1.4rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+      gap: 1.5rem;
+    }
+
+    .gallery-title {
+      font-size: 2rem;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Header -->
+<header>
+  <nav>
+    <div class="logo">ZKGT</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Hello!</a></li>
+      <li><a href="about.html">More About Me</a></li>
+      <li><a href="Gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Socials</a></li>
+      <li><i class="fas fa-search search-icon"></i></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="gallery-section" id="gallery">
+  <div class="gallery-container">
+    <h2 class="gallery-title">Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="gallery-frame">
+          <img src="./assets/images/cat&me.png" alt="Cat and me" />
+        </div>
+        <p class="gallery-caption">Cat and Me</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-frame">
+          <img src="./assets/images/food.png" alt="Food" />
+        </div>
+        <p class="gallery-caption">Hilig kumain~</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-frame">
+          <img src="./assets/images/boots.png" alt="Photo frame 3" />
+        </div>
+        <p class="gallery-caption">Me and my baby</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-frame">
+          <img src="./assets/images/mcdoo.png" alt="Photo frame 4" />
+        </div>
+        <p class="gallery-caption">Mcdo pips</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-frame">
+          <img src="./assets/images/mcdu.png" alt="Gallery image 5" />
+        </div>
+        <p class="gallery-caption">Eyy quality expert yan</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-frame">
+          <img src="./assets/images/kagurabachi.png" alt="Gallery image 6" />
+        </div>
+        <p class="gallery-caption">My favorite manga</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-frame">
+          <img src="./assets/images/fam.png" alt="Gallery image 7" />
+        </div>
+        <p class="gallery-caption">My Family</p>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-frame">
+          <img src="./assets/images/fate.png" alt="Gallery image 8" />
+        </div>
+        <p class="gallery-caption">My Favorite Anime</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    // Search functionality
+    document.querySelector('.search-icon').addEventListener('click', function() {
+      alert('Search functionality coming soon!');
+    });
+  });
+</script>
+ <script type="text/javascript" src="./main.4c6e144e.js"></script></body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      navbarToggleSidebar();
+      closeMenuBeforeGoingToPage();
+      navActivePage();
+    });
+</script>
+ <script type="text/javascript" src="./main.4c6e144e.js"></script></body>
+
+</html>
